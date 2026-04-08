@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Pirata+One&family=UnifrakturMaguntia&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #0d0d0d;
+  color: #e5e5e5;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Treasure Map Parchment Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(90deg, rgba(245, 158, 11, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(245, 158, 11, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(217, 70, 239, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom scrollbar - Map styled */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #171717;
+  border-left: 2px solid rgba(245, 158, 11, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(245, 158, 11, 0.4);
+  border-radius: 0;
+  border: 2px solid rgba(245, 158, 11, 0.6);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(245, 158, 11, 0.6);
+}
+
+/* Treasure map aged paper effect */
+.glass {
+  background-color: rgba(13, 13, 13, 0.85);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(245, 158, 11, 0.3);
+  box-shadow: 
+    inset 0 0 20px rgba(245, 158, 11, 0.1),
+    0 4px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(245, 158, 11, 0.03) 2px, rgba(245, 158, 11, 0.03) 4px);
+  pointer-events: none;
+}
+
+/* Glow effects - Treasure map style */
+.glow-accent {
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.4), 0 0 60px rgba(245, 158, 11, 0.1);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 30px rgba(217, 70, 239, 0.4), 0 0 60px rgba(217, 70, 239, 0.1);
+}
+
+/* Map torn edges effect */
+.map-section {
+  position: relative;
+  border: 3px solid rgba(245, 158, 11, 0.3);
+  border-style: dashed;
+  margin: 2rem 0;
+  padding: 3rem 1rem;
+}
+
+.map-section::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 1px solid rgba(245, 158, 11, 0.1);
+  pointer-events: none;
+}
+
+/* Compass rose decoration */
+.compass-decoration {
+  position: relative;
+}
+
+.compass-decoration::after {
+  content: '✦';
+  position: absolute;
+  color: rgba(245, 158, 11, 0.3);
+  font-size: 1.5rem;
+}
+
+/* Dotted path connector */
+.treasure-path {
+  position: relative;
+}
+
+.treasure-path::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -2rem;
+  width: 3px;
+  height: 2rem;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(245, 158, 11, 0.4) 0,
+    rgba(245, 158, 11, 0.4) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  transform: translateX(-50%);
+}
+
+/* Vintage map text shadow */
+.map-text {
+  text-shadow: 
+    2px 2px 0 rgba(245, 158, 11, 0.2),
+    -1px -1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Aged paper texture */
+.parchment {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(245, 158, 11, 0.02) 2px,
+      rgba(245, 158, 11, 0.02) 4px
+    );
+}
+
+/* Map border ornament */
+.map-border {
+  border: 2px solid rgba(245, 158, 11, 0.4);
+  box-shadow: 
+    inset 0 0 20px rgba(245, 158, 11, 0.1),
+    0 0 15px rgba(245, 158, 11, 0.2);
+  position: relative;
+}
+
+.map-border::before,
+.map-border::after {
+  content: '';
+  position: absolute;
+  background: rgba(245, 158, 11, 0.4);
+}
+
+.map-border::before {
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  height: 1px;
+}
+
+.map-border::after {
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  height: 1px;
+}

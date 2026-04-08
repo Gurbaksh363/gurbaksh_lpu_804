@@ -1,0 +1,16 @@
+🗺️ Treasure Map Features:
+Parchment Background - Aged paper texture with grid lines
+Compass Navigation - Rotating compass icon in navbar with map symbols (⚓🗺⚔⛵) for each section
+Map Corner Decorations - Ornamental corners on the entire page
+Treasure Path Connectors - Dotted lines connecting sections like routes on a map
+Vintage Map Styling:
+Dashed borders with aged effects
+Corner ornaments on cards and buttons
+Map-styled borders instead of rounded corners
+Text shadows for aged/printed look
+Compass rose decoration (✦) in top right
+Updated Components:
+Buttons have map corner decorations and angular edges
+Cards have treasure map borders with ornamental corners
+Section headings have decorative markers
+Scrollbar styled like a map edge
